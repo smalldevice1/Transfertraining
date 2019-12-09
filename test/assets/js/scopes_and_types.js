@@ -4,12 +4,12 @@
  * @package Webapplication
  * @module Transfer (Javascript Grundlagen)
  * @author M. Pippert (smalldevice1)
- * @version v0.8.15
+ * @version v0.8.16
  * @since 2019-12-05
  * @copyright von mir aus kann das kopieren wer will, reich werd ich damit sowieso nicht!
  * @license s.o.
  */
- 
+
 !(function () {
     'use strict';
     //---------------------
@@ -23,38 +23,38 @@
     // FUNCTIONS 
     //---------------------
     function _log(varname, variable) {
-        try 
-        { 
+        try {
             let varType = _getType(variable);
             if (typeof (variable) === 'object') {
                 // works also for arrays ;)
-                console.log(varname + varType); 
+                console.log(varname + varType);
                 for (let key in variable) {
-                    console.log(' Key: ' + key + 
-                                ' Type:' + _getType((variable[key])) + 
-                                ' Value:' + variable[key]);
+                    console.log(' Key: ' + key +
+                        ' Type:' + _getType((variable[key])) +
+                        ' Value:' + variable[key]);
                 }
-            } 
-            else console.log(varname + 
-                            ' Type:' + _getType(variable) + 
-                            ' Value:' + variable);
-            console.log("-----------------------------------------------------------------------------"); 
-        } 
-        catch (error) { console.log(error); }
+            } else console.log(varname +
+                ' Type:' + _getType(variable) +
+                ' Value:' + variable);
+            console.log("-----------------------------------------------------------------------------");
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    function _showVarInfo(variable){
-        _log(_getVarName({variable}),variable);
+    function _showVarInfo(variable) {
+        _log(_getVarName({
+            variable
+        }), variable);
     }
 
-    function _getType(variable){
-        let varType ='';
-        if(Array.isArray(variable)) return ' {Array} ';
-        return ' {' + typeof (variable) + '}' ; 
+    function _getType(variable) {
+        let varType = '';
+        if (Array.isArray(variable)) return ' {Array} ';
+        return ' {' + typeof (variable) + '}';
     }
 
-    function _getVarName(variable)
-    {
+    function _getVarName(variable) {
         return Object.keys(variable)[0];
     }
 
@@ -99,7 +99,7 @@
     //---------------------
     window.onload = function () {
         _main();
-        
+
         let numVariable = 1;
         let boolVariable = true;
         let stringVariable = "text";
@@ -110,11 +110,19 @@
         window.tools.showVarInfo(boolVariable);
         window.tools.showVarInfo(stringVariable);
         window.tools.showVarInfo(arrayVariable);
-        
-        console.log(window.tools.getVarName({numVariable}), window.tools.getType(numVariable));
-        console.log(window.tools.getVarName({boolVariable}), window.tools.getType(boolVariable));
-        console.log(window.tools.getVarName({stringVariable}), window.tools.getType(stringVariable));
-        console.log(window.tools.getVarName({arrayVariable}), window.tools.getType(arrayVariable));
+
+        console.log(window.tools.getVarName({
+            numVariable
+        }), window.tools.getType(numVariable));
+        console.log(window.tools.getVarName({
+            boolVariable
+        }), window.tools.getType(boolVariable));
+        console.log(window.tools.getVarName({
+            stringVariable
+        }), window.tools.getType(stringVariable));
+        console.log(window.tools.getVarName({
+            arrayVariable
+        }), window.tools.getType(arrayVariable));
     };
 
     //------------------------------------------
