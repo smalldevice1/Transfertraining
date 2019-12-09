@@ -4,7 +4,7 @@
  * @package Webapplication
  * @module Transfer (Javascript Grundlagen)
  * @author M. Pippert (smalldevice1)
- * @version v0.8.16
+ * @version v0.8.15
  * @since 2019-12-05
  * @copyright von mir aus kann das kopieren wer will, reich werd ich damit sowieso nicht!
  * @license s.o.
